@@ -9,16 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by jt on 5/18/17.
  */
 @Controller
-public class BookController {
+public class BookController
+{
 
     private BookRepository bookRepository;
 
-    public BookController(BookRepository bookRepository) {
+    public BookController(BookRepository bookRepository)
+    {
         this.bookRepository = bookRepository;
     }
 
     @RequestMapping("/books")
-    public String getBooks(Model model){
+    public String getBooks(Model model)
+    {
 
         model.addAttribute("books", bookRepository.findAll());
 
